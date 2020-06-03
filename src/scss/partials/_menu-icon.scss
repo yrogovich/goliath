@@ -1,0 +1,92 @@
+$menu-icon-size:               4rem;
+$menu-icon-dash-width:         0.9em; //em(4.5rem, 6rem)
+$menu-icon-dash-height:        0.075em; //em(0.3rem, 6rem)
+$menu-icon-dash-gutter:        $menu-icon-dash-height * 4;
+$menu-icon-dash-color:         $font-color;
+$menu-icon-dash-border-radius: 10rem;
+
+
+%menu-dash{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: (1em - $menu-icon-dash-width) / 2; // center X
+    background-color: $menu-icon-dash-color;
+    width: $menu-icon-dash-width;
+    height: $menu-icon-dash-height;
+    border-radius: $menu-icon-dash-border-radius;
+}
+
+.menu-icon{
+    font-size: $menu-icon-size;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+
+    span {
+        @extend %menu-dash;
+        margin-top: $menu-icon-dash-height / -2;
+    }
+
+    &:before {
+        content: "";
+        @extend %menu-dash;
+        margin-top: -$menu-icon-dash-gutter + ($menu-icon-dash-height / -2);
+    }
+
+    &:after {
+        content: "";
+        @extend %menu-dash;
+        margin-top: $menu-icon-dash-gutter + ($menu-icon-dash-height / -2);
+        left: auto;
+        right: (1em - $menu-icon-dash-width) / 2;
+    }
+
+    &:before, &:after {
+        transition: 0.2s ease 0.2s;
+    }
+
+    span{
+        transition: 0.2s;
+
+        &:before{
+            @extend %menu-dash;
+            content: "";
+            transition: inherit;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &.active {
+        &:before, &:after{
+            transition: 0.2s ease;
+            width: 0;
+        }
+
+        span{
+            transform: rotate(45deg);
+            transition: 0.2s ease 0.2s;
+
+            &:before{
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}
+
+.menu-icon {
+    display: none;
+    z-index: 101;
+    @media (max-width: $mobile-navbar) {
+        display: block;
+    }
+}
