@@ -307,11 +307,16 @@ h5, .h5 {
   display: flex;
   align-items: center;
   max-width: 25rem;
+  transition: filter .2s ease-in-out;
 }
 
 .logo-text {
   margin-left: 1.2rem;
   margin-top: 1rem;
+}
+
+.logo:hover {
+  filter: contrast(0.5);
 }
 
 .navbar {
@@ -427,7 +432,7 @@ h5, .h5 {
 #home-page .header {
   padding: 3rem 0 5rem;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   max-width: 100%;
 }
 
@@ -445,7 +450,7 @@ h5, .h5 {
 
 @media screen and (max-width: 560px) {
   #home-page .header .h1 {
-    font-size: 11vw;
+    font-size: 7vw;
   }
 }
 
@@ -466,6 +471,7 @@ h5, .h5 {
   #home-page .header .custom-row .col.c1 {
     max-width: 100%;
     width: 100%;
+    margin-top: -3rem;
   }
   #home-page .header .custom-row .col.c2 {
     order: -1;
@@ -481,35 +487,27 @@ h5, .h5 {
   z-index: 1;
 }
 
-#home-page .header .devices .ipad,
-#home-page .header .devices .iphone {
+#home-page .header .devices img {
+  transform-origin: center;
+}
+
+#home-page .header .devices .ipad-wrapper,
+#home-page .header .devices .iphone-wrapper {
   position: absolute;
 }
 
-#home-page .header .devices .ipad {
+#home-page .header .devices .ipad-wrapper {
   top: 53%;
   left: 0;
   transform: translateY(-50%) translateX(-50%);
   width: 69vh;
 }
 
-@media screen and (max-width: 1100px) {
-  #home-page .header .devices .ipad {
-    transform: translateY(-50%) translateX(-50%) scale(0.7);
-  }
-}
-
-#home-page .header .devices .iphone {
+#home-page .header .devices .iphone-wrapper {
   right: 0;
   top: 40%;
   transform: translateY(-50%);
   width: 63vh;
-}
-
-@media screen and (max-width: 1100px) {
-  #home-page .header .devices .iphone {
-    transform: translateY(-50%) scale(0.7);
-  }
 }
 
 #home-page .header .rectangle {
@@ -543,6 +541,18 @@ h5, .h5 {
 
 #home-page .header ul {
   margin-bottom: 6rem;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1100px) {
+  #home-page .header .devices .ipad-wrapper {
+    left: -2vw;
+    transform: translateY(-50%) translateX(-50%) scale(0.6);
+  }
+  #home-page .header .devices .iphone-wrapper {
+    transform: translateY(-50%) scale(0.5);
+    right: -5vw;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -552,20 +562,23 @@ h5, .h5 {
   #home-page .header .devices .decor {
     display: none;
   }
-  #home-page .header .devices .ipad {
+  #home-page .header .devices .ipad-wrapper {
+    width: unset;
     left: -3%;
   }
-  #home-page .header .devices .iphone {
-    right: -11%;
+  #home-page .header .devices .iphone-wrapper {
+    width: unset;
+    right: -28%;
   }
   #home-page .header .rectangle {
     height: 50vw;
     left: 0%;
     right: 0;
-    top: 20%;
+    top: 25%;
   }
   #home-page .header ul {
     margin-bottom: 2rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -574,7 +587,6 @@ h5, .h5 {
 }
 
 .ul-primary li {
-  font-size: 2rem;
   margin-left: 1.5rem;
   line-height: 160%;
   position: relative;

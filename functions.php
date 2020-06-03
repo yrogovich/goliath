@@ -155,9 +155,11 @@ function goliath_theme_scripts() {
 	
 	wp_enqueue_style( 'goliath-theme-style-main', get_template_directory_uri() . '/src/css/style.css', '', _S_VERSION );
 
+	wp_enqueue_script( 'goliath-theme-gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'goliath-theme-lazyload', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'goliath-theme-fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'goliath-theme-script', get_template_directory_uri() . '/src/js/index.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'goliath-theme-gsap-script', get_template_directory_uri() . '/src/js/gsap.js', array('jquery'), _S_VERSION, true );
 
 	// Add template path to JS file
 	$translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );

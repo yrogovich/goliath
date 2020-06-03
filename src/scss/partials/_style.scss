@@ -10,6 +10,7 @@
     transition: .5s ease-out;
     background-color: $background-color-primary;
     z-index: 1000;
+
     object {
         width: 18rem;
         max-width: 100%;
@@ -26,9 +27,14 @@
     display: flex;
     align-items: center;
     max-width: 25rem;
+
+    transition: filter .2s ease-in-out;
     &-text {
         margin-left: 1.2rem;
         margin-top: 1rem;
+    }
+    &:hover {
+        filter: contrast(.5);
     }
 }
 
@@ -156,7 +162,7 @@
         padding: 3rem 0 5rem;
         position: relative;
 
-        overflow-x: hidden;
+        overflow: hidden;
         max-width: 100%;
 
         .h1 {
@@ -167,7 +173,7 @@
                 margin-bottom: 2rem;
             }
             @include xs-block() {
-                font-size: 11vw;
+                font-size: 7vw;
             }
         }
 
@@ -187,6 +193,7 @@
                     &.c1 {
                         max-width: 100%;
                         width: 100%;
+                        margin-top: -3rem;
                     }
                     &.c2 {
                         order: -1;
@@ -203,27 +210,24 @@
             transform: translateX(15%);
             z-index: 1;
 
-            .ipad,
-            .iphone {
+            img {
+                transform-origin: center;
+            }
+            .ipad-wrapper,
+            .iphone-wrapper {
                 position: absolute;
             }
-            .ipad { 
+            .ipad-wrapper { 
                 top: 53%;
                 left: 0;
                 transform: translateY(-50%) translateX(-50%);
                 width: 69vh;
-                @include lg-block() {          
-                    transform: translateY(-50%) translateX(-50%) scale(.7);
-                }
             }
-            .iphone {
+            .iphone-wrapper {
                 right: 0;
                 top: 40%;
                 transform: translateY(-50%);
                 width: 63vh;
-                @include lg-block() {          
-                    transform: translateY(-50%) scale(.7);
-                }
             }
             
         }
@@ -255,30 +259,46 @@
         }
         ul {
             margin-bottom: 6rem;
+            font-size: 2rem;
         }
-
-        @include md-block() {      
+        @include lg-block() {   
+            .devices {
+                .ipad-wrapper { 
+                    left: -2vw;
+                    transform: translateY(-50%) translateX(-50%) scale(.6);
+                }
+                .iphone-wrapper {
+                    transform: translateY(-50%) scale(.5);
+                    right: -5vw;
+                }
+            }
+            
+        }
+        @include md-block() {     
             .devices {
                 transform: translateX(10%);
                 .decor {
                     display: none;
                 }         
-                .ipad { 
+                .ipad-wrapper { 
+                    width: unset;
                     left: -3%;
                 }
-                .iphone {
-                    right: -11%;
+                .iphone-wrapper {
+                    width: unset;
+                    right: -28%;
                 }
             }
             .rectangle {
                 height: 50vw;
                 left: 0%;
                 right: 0;
-                top: 20%;
+                top: 25%;
             
             }
             ul {
                 margin-bottom: 2rem;
+                font-size: 1.4rem;
             }
         }
     }
@@ -287,7 +307,6 @@
 .ul-primary {
     margin: 2rem 0;
     li {
-        font-size: 2rem;
         margin-left: 1.5rem;
         line-height: 160%;
 

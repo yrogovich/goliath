@@ -1,11 +1,3 @@
-window.addEventListener('load', () => {
-    setTimeout(hidePreload, 2000); // onLoad wait 2 sec
-});
-function hidePreload() {
-    const preload = document.querySelector('.preload');
-    preload.classList.add('preload-finish');
-}
-
 (function($) {
 $(function() {
     const templateUrl = wp.templateUrl;

@@ -25,9 +25,18 @@ get_header();
                 </div>
                 <div class="col c2">
                     <div class="devices">
-                        <img data-src="<?php bloginfo('template_url') ?>/src/img/home-page/Macbook.png" alt="Macbook" class="macbook lazy">
-                        <img data-src="<?php bloginfo('template_url') ?>/src/img/home-page/iPad.png" alt="iPad" class="ipad lazy">
-                        <img data-src="<?php bloginfo('template_url') ?>/src/img/home-page/iPhone.png" alt="iPhone" class="iphone lazy">
+                        <div class="macbook-wrapper">
+                            <img data-src="<?php bloginfo('template_url') ?>/src/img/home-page/Macbook.png" alt="Macbook" class="macbook lazy">
+                        </div>
+                        <!-- /.macbook-wrapper -->
+                        <div class="ipad-wrapper">
+                            <img data-src="<?php bloginfo('template_url') ?>/src/img/home-page/iPad.png" alt="iPad" class="ipad lazy">
+                        </div>
+                        <!-- /.ipad-wrapper -->
+                        <div class="iphone-wrapper">
+                            <img data-src="<?php bloginfo('template_url') ?>/src/img/home-page/iPhone.png" alt="iPhone" class="iphone lazy">
+                        </div>
+                        <!-- /.iphone-wrapper -->
 
                         <div class="decor">
                             <img data-src="<?php bloginfo('template_url') ?>/src/img/home-page/decor.svg" alt="dots" class="decor-big lazy">
