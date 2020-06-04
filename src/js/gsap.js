@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
-    setTimeout(hidePreload, 2000); // onLoad wait 2 sec
+    hidePreload()
+    // setTimeout(hidePreload, 2000); // onLoad wait 2 sec
 });
 
 // Globals

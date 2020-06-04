@@ -33,10 +33,10 @@ $(function() {
     });
 
     $('.switcher-box input').on('input', function() {
-        if($(this).attr("checked") != 'checked') {
-            $('html').attr('data-theme', 'default');
-        } else {
+        if($(this).attr("checked") == 'checked') {
             $('html').attr('data-theme', 'light');
+        } else {
+            $('html').attr('data-theme', 'default');
         }
     });
 
@@ -50,14 +50,22 @@ $(function() {
     // Jquery LazyLoad init
     try {
         $('.lazy').Lazy();
-        $(".lazy-blur").Lazy({
-            threshold: 0,
-            afterLoad: function(element) {
-              element.addClass("no-blur");
-            }
-        });
     } catch (error) {
         console.log(`LazyLoad plugin error: ${error}`);
+    }
+
+    // AOS init
+    try {
+        $('.h2').attr('data-aos', 'fade-up');
+        AOS.init({      
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1000, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations    
+          });
+    } catch (error) {
+        console.log(`AOS plugin error: ${error}`);
     }
 
     /*

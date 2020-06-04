@@ -37,15 +37,12 @@ body {
     color: $font-color;
     background-color: $background-color-primary;
 
-    transition-duration: .8s;
-    transition-timing-function: ease-in-out;
-    transition-property: color, background;
-
     @include md-block() {
         font-size: 1.3rem;
         
     }
 }
+
 
 .container {
     @include wrapper();
@@ -59,6 +56,9 @@ body {
     @include row-flex();
 }
 
+.img-wrapper {
+    line-height: 0;
+}
 .img-wrapper img {
     object-fit: cover;
     object-position: center;
@@ -73,6 +73,32 @@ body {
 
 
 // Tags
+.section {
+    padding: 13rem 0;
+   
+    &.gray {
+        background-color: $background-color-secondary;
+    }
+    .h2 {
+        text-align: center;
+        margin-bottom: 3vw;
+    }
+    @include sm-block() {
+        padding: 6rem 0;
+        .h2 {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+body,
+.section,
+svg path {
+    transition-duration: .6s;
+    transition-timing-function: ease-in-out;
+    transition-property: color, background;
+}
+
 p {
     margin-bottom: 2rem;
     line-height: 150%;
@@ -88,7 +114,23 @@ h4, .h4,
 h5, .h5 {
     color: $heading-color;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+h2,.h2 {
+    font-weight: bold;
+    font-size: 3.6rem;
+    @include sm-block() {
+        font-size: 2.4rem;
+    }
+}
+
+h3,.h3 {
+    font-weight: bold;
+    font-size: 2.2rem;
+    @include sm-block() {
+        font-size: 2rem;
+    }
 }
 
 #wpadminbar {

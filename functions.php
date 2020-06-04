@@ -139,6 +139,90 @@ function goliath_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'goliath_theme_widgets_init' );
 
+//Remove JQuery migrate
+function remove_jquery_migrate($scripts)
+{
+    if (!is_admin() && isset($scripts->registered['jquery'])) {
+        $script = $scripts->registered['jquery'];
+        
+        if ($script->deps) { // Check whether the script has any dependencies
+            $script->deps = array_diff($script->deps, array(
+                'jquery-migrate'
+            ));
+        }
+    }
+}
+add_action('wp_default_scripts', 'remove_jquery_migrate');
+
+function my_deregister_scripts(){
+	// remove wp-embed 
+	wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'my_deregister_scripts' );
+
+
+## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива
+add_filter( 'get_the_archive_title', function( $title ){
+	return preg_replace('~^[^:]+: ~', '', $title );
+});
+
+function disable_wp_emojicons() {
+	// remove all actions related to emojis
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+}
+add_action( 'init', 'disable_wp_emojicons' );
+
+/**
+ * Set sizes for media library
+ */
+function primo_theme_add_sizes() {
+	add_image_size( 'max', 4000, 4000);
+
+	add_image_size( 'project_full', 1200, 660);
+	add_image_size( 'project_thumbinail', 550, 320);
+}
+add_action( 'after_setup_theme', 'primo_theme_add_sizes');
+
+add_action('init', 'my_custom_init');
+function my_custom_init(){
+	register_post_type('portfolio', array(
+		'labels'             => array(
+			'name'               => 'Портфолио', // Основное название типа записи
+		  ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => true,
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array('title'),
+	) );
+}
+function taxonomy_init() {
+	// create a new taxonomy
+	$labels = array(
+		'name' => _x( 'Category', 'taxonomy general name' ),
+	); 		
+	register_taxonomy('category',array('portfolio'), array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+	));
+}
+add_action( 'init', 'taxonomy_init' );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -152,12 +236,15 @@ function goliath_theme_scripts() {
 
 	wp_enqueue_style( 'goliath-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'goliath-theme-fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css', '', _S_VERSION );
+	wp_enqueue_style( 'goliath-theme-aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css', '', _S_VERSION );
 	
 	wp_enqueue_style( 'goliath-theme-style-main', get_template_directory_uri() . '/src/css/style.css', '', _S_VERSION );
 
 	wp_enqueue_script( 'goliath-theme-gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'goliath-theme-lazyload', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'goliath-theme-fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', array('jquery'), false, true );
+	wp_enqueue_script( 'goliath-theme-aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array('jquery'), false, true );
+
 	wp_enqueue_script( 'goliath-theme-script', get_template_directory_uri() . '/src/js/index.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'goliath-theme-gsap-script', get_template_directory_uri() . '/src/js/gsap.js', array('jquery'), _S_VERSION, true );
 
