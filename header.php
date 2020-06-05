@@ -35,6 +35,8 @@
 	<meta name="msapplication-TileImage" content="<?php bloginfo('template_url'); ?>/src/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
+	<?php include "GLOBALS.php" // Global variables ?>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -55,6 +57,10 @@
 					<img src="<?php bloginfo('template_url') ?>/src/img/logo-text.svg" alt="logo-text" class="logo-text">
 				</a>
 
+				<div class="mobile-langs">
+				<?php get_template_part('template-parts/part-langs'); ?>
+				</div>
+
 				<?php
 				wp_nav_menu(
 					array(
@@ -65,12 +71,9 @@
 				?>
 
 				<div class="info-block">
-					<a href="tel:+4407414161266" class="phone">+44 (0) 741 416 1266</a>
+					<a href="tel:<?=PHONE_HREF?>" class="phone"><?=PHONE?></a>
 
-					<div class="langs">
-						<a href="<?=get_home_url(null, '')?>" class="en">En</a>
-						<a href="<?=get_home_url(null, '')?>" class="ru active">Ru</a>
-					</div>
+					<?php get_template_part('template-parts/part-langs'); ?>
 				</div>
 
 				<button class="menu-icon"><span></span></button>

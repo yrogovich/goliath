@@ -2,6 +2,36 @@
 $(function() {
     const templateUrl = wp.templateUrl;
 
+    // Theme color managing
+    let switcher = $('.switcher-box input');
+    if (localStorage.getItem('colorScheme')) {
+        $('html').attr('data-theme', localStorage.getItem('colorScheme'));
+    }  
+
+    if($('html').attr('data-theme') === 'default') {
+        switcher.attr( 'checked', true );
+    } else {
+        switcher.attr( 'checked', false );
+    }
+    
+    switcher.on('input', function() {
+        if ($(this).is(":checked") ) {
+            localStorage.setItem('colorScheme', 'default');
+            $('html').attr('data-theme', localStorage.getItem('colorScheme'));
+        } else {
+            localStorage.setItem('colorScheme', 'light');
+            $('html').attr('data-theme', localStorage.getItem('colorScheme'));
+        }
+    });
+
+    //
+    $('[data-modal]').click(function() {
+        let target = $(this).data('modal');
+
+        $(`#${target}`).addClass('active');
+    });
+
+
     // Form handler
     $('form').submit(function(event) {
         event.preventDefault();
@@ -32,19 +62,13 @@ $(function() {
         });
     });
 
-    $('.switcher-box input').on('input', function() {
-        if($(this).attr("checked") == 'checked') {
-            $('html').attr('data-theme', 'light');
-        } else {
-            $('html').attr('data-theme', 'default');
-        }
-    });
-
     // Menu toggle script
     $('.menu-icon').click(function () {
         $(this).toggleClass('active');
         $('html').toggleClass('overflow-hidden');
+
         $('.mobile-menu').toggleClass('active');
+        $('.navbar').toggleClass('active');
     });
 
     // Jquery LazyLoad init
@@ -61,25 +85,24 @@ $(function() {
             // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
             offset: 120, // offset (in px) from the original trigger point
             delay: 0, // values from 0 to 3000, with step 50ms
-            duration: 1000, // values from 0 to 3000, with step 50ms
+            duration: 1500, // values from 0 to 3000, with step 50ms
             easing: 'ease', // default easing for AOS animations    
           });
     } catch (error) {
         console.log(`AOS plugin error: ${error}`);
     }
 
-    /*
+
     //  Show ymaps on scroll
-    let point = $('#discounts');
+    let point = $('#technologiesAndProjects');
     let pointTop = point.offset().top;
     let handler = function () {
         let windowTop = $(this).scrollTop();
         if (windowTop > pointTop) {
-            $('#map').html('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7ebdb72eaffd8f5252bee2db8223a3e5d51e60278d52b1cc7e6b2288974cfa42&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>');
+            $('#map').html('<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.883043148375!2d-0.2356441764747555!3d51.588706879118114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610d7f771e71d%3A0x5a0ce33e7eec2ce4!2zUmFtYmxlciBDb3VydCwgNyBTd3luZm9yZCBHYXJkZW5zLCBMb25kb24gTlc0IDRYTCwg0JLQtdC70LjQutC-0LHRgNC40YLQsNC90LjRjw!5e0!3m2!1sru!2sby!4v1591343516925!5m2!1sru!2sby" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>');
             $(window).unbind( "scroll", handler );
         }
     };
-    $(window).bind( "scroll", handler ); 
-    */
+    $(window).bind( "scroll", handler );  
 });
 })(jQuery);

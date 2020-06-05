@@ -85,7 +85,7 @@ $menu-icon-dash-border-radius: 10rem;
 
 .menu-icon {
     display: none;
-    z-index: 101;
+    z-index: 120;
     @media (max-width: $mobile-navbar) {
         display: block;
     }
