@@ -349,6 +349,7 @@
     border: none;
     cursor: pointer;
     position: relative;
+    background-color: none;
     z-index: 0;
     transition: .3s ease-in-out;
 
@@ -1012,7 +1013,7 @@ a.primary {
     opacity: 0;
     pointer-events: none;
 
-    transition: opacity 1s cubic-bezier(0.4, 0.01, 0.02, 0.98);
+    transition: opacity .6s cubic-bezier(0.4, 0.01, 0.02, 0.98);
     will-change: opacity;
 
     .background {
@@ -1068,7 +1069,169 @@ a.primary {
 .modal {
     display: none;
 
+    width: 97rem;
+    // min-height: 60rem;
+    padding: 0;
+    background-color: $background-color-primary;
+
+    box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.5), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .custom-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .column-about {
+        flex: 2 1 30rem;
+        background-color: #fff;
+        .h2 {
+            color: #242424;
+        }
+        .text {
+            padding: 5rem 5rem 0 5rem;
+        }
+        .image {
+            width: 100%;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+    .column-form {
+        flex: 4 1 35rem;
+        background-color: $background-color-primary;
+        padding: 5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    form {
+        width: 100%;
+        text-align: center;
+        .btn {
+            font-size: 1.6rem;
+            background: none;
+            margin-top: 1rem;
+        }
+    }
+    .privacy-text {
+        margin-top: 6rem;
+    }
+
     &.active {
         display: block;
+    }
+    @include sm-block() {
+        .column-about {
+            .text {
+                padding: 3rem 3rem 0 3rem;
+            }
+            .image {
+                display: none;
+            }
+        }
+        .column-form {
+            padding: 2rem 3rem;
+            border: 1px solid $heading-color;
+        }
+        form {
+            .btn {
+                font-size: 1.5rem;
+                margin-top: 0;
+            }
+        }
+        .privacy-text {
+            margin-top: 1rem;
+        }
+    }
+}
+.privacy-text {
+    font-size: 1rem;
+    display: block;
+    cursor: pointer;
+    a {
+        color: $primary;
+    }
+}
+.input-wrapper {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    label {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    input,
+    textarea {
+        padding: 1.6rem 2rem;
+        border: none;
+        width: 100%;
+        background: $input-bg;
+        color: $heading-color;
+    }
+    textarea {
+        resize: vertical;
+        min-height: 9rem;
+        max-height: 30rem;
+    }
+}
+
+/* для элемента input c type="checkbox" */
+.custom-checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox>span::before {
+    content: '';
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid $primary;
+    border-radius: 2px;
+    margin-right: 0.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    vertical-align: middle;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox>input:checked+span::before {
+    border-color: $primary;
+    background-color: $primary;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox>input:disabled+span::before {
+    background-color: #e9ecef;
+}
+
+////////////////////////////////////
+.breadcrumbs {
+    background-color: $primary;
+    &-wrapper {
+        min-height: 4rem;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        a {
+            color: $heading-color;
+            text-decoration: underline;
+        }
+        span {
+            color: #7E704D;
+        }
     }
 }

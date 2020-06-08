@@ -10,6 +10,8 @@
 get_header();
 ?>
 
+	<?php get_template_part( 'template-parts/section-breadcrumbs'); ?>
+
 	<main id="primary" class="site-main">
 
 		<?php
@@ -20,8 +22,8 @@ get_header();
 
 			the_post_navigation(
 				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'goliath-theme' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'goliath-theme' ) . '</span> <span class="nav-title">%title</span>',
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Предыдущий проект:', 'goliath-theme' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Следующий проект:', 'goliath-theme' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
 
@@ -36,5 +38,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

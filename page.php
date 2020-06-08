@@ -14,8 +14,9 @@
 
 get_header();
 ?>
+	<?php get_template_part( 'template-parts/section-breadcrumbs'); ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main section">
 
 		<?php
 		while ( have_posts() ) :
@@ -34,5 +35,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

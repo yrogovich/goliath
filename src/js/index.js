@@ -24,14 +24,6 @@ $(function() {
         }
     });
 
-    //
-    $('[data-modal]').click(function() {
-        let target = $(this).data('modal');
-
-        $(`#${target}`).addClass('active');
-    });
-
-
     // Form handler
     $('form').submit(function(event) {
         event.preventDefault();
@@ -51,9 +43,9 @@ $(function() {
                     src: '#thanks-modal', 
                     modal: true
                 });
-                setTimeout(() => { 
-                    $.fancybox.close();
-                }, 2000);
+                // setTimeout(() => { 
+                //     $.fancybox.close();
+                // }, 2000);
             },
             error: function () {
                 console.log('form error');

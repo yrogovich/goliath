@@ -58,7 +58,7 @@
 				</a>
 
 				<div class="mobile-langs">
-				<?php get_template_part('template-parts/part-langs'); ?>
+					<?php get_template_part('template-parts/part-langs'); ?>
 				</div>
 
 				<?php

@@ -6,6 +6,7 @@ html {
     --background-color-secondary: #1E1E1E;
     --selection: #ffe7aa1c;
     --border-color: rgba(255, 255, 255, 0.1);
+    --input-bg: #343434;
 
     --primary: #D8BC75;
 
@@ -20,6 +21,7 @@ html {
         --background-color-secondary: #FAFAFA;
 
         --border-color: rgba(0, 0, 0, 0.1);
+        --input-bg: #eaeaea;
 
         --filter: brightness(0);
         --brand-color: saturate(0) invert(1) brightness(0.6);
@@ -33,6 +35,7 @@ $background-color-primary: var(--background-color-primary);
 $background-color-secondary: var(--background-color-secondary);
 $selection: var(--selection);
 $border-color: var(--border-color);
+$input-bg: var(--input-bg);
 
 $primary: var(--primary);
 

@@ -21,7 +21,7 @@ get_header();
                         <li>SEO подготовка всех сайтов</li>
                     </ul>
 
-                    <div class="btn btn-primary" data-modal="#calc-price-modal">Запросить расчет стоимости</div>
+                    <div class="btn btn-primary" data-fancybox data-src="#calc-price-modal">Запросить расчет стоимости</div>
                 </div>
                 <div class="col c2">
                     <div class="devices">
