@@ -57,7 +57,7 @@ get_header();
 
             <div class="services">
                 <div class="service">
-                    <a href="#">
+                    <a href="<?=get_home_url(null, 'cost') ?>">
                         <div class="icon">
                             <svg viewBox="0 0 282 299" xmlns="http://www.w3.org/2000/svg">
                                 <g class="outline-border" >
@@ -107,7 +107,7 @@ get_header();
                 </div>
                 <!-- /.service -->
                 <div class="service">
-                    <a href="#">
+                    <div>
                         <div class="icon">
                             <svg viewBox="0 0 282 299" xmlns="http://www.w3.org/2000/svg">
                                 <g class="outline-border">
@@ -154,11 +154,11 @@ get_header();
                             <li>Отчет каждый месяц</li>
                         </ul>
                         <div class="btn btn-primary" data-fancybox data-src="#calc-price-modal">Узнать стоимость</div>
-                    </a>
+                    </div>
                 </div>
                 <!-- /.service -->
                 <div class="service">
-                    <a href="#">
+                    <div>
                         <div class="icon">
                             <svg viewBox="0 0 282 299" xmlns="http://www.w3.org/2000/svg">
                                 <g class="outline-border">
@@ -197,11 +197,11 @@ get_header();
                             <li>Бесплатный SSL</li>
                         </ul>
                         <div class="btn btn-primary">Узнать стоимость</div>
-                    </a>
+                    </div>
                 </div>
                 <!-- /.service -->
                 <div class="service">
-                    <a href="#">
+                    <div>
                         <div class="icon">
                         <svg viewBox="0 0 282 299" xmlns="http://www.w3.org/2000/svg">
                                 <g class="outline-border" fill="#D8BC75">
@@ -239,7 +239,7 @@ get_header();
                             <li>Предоставим отчет</li>
                         </ul>
                         <div class="btn btn-primary">Узнать стоимость</div>
-                    </a>
+                    </div>
                 </div>
                 <!-- /.service -->
             </div>
@@ -305,7 +305,7 @@ get_header();
             <div class="h2">Почему выбирают нас?</div>
 
             <div class="features row">
-                <a href="#" class="feature">
+                <div class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -325,13 +325,11 @@ get_header();
                     <!-- /.icon -->
                     <div class="text">
                         <div class="h3">Работа с  WordPress</div>
-                        <p>Мы создаем веб сайты на самой популярной платформе - WordPress</p>
-
-                        <div class="btn btn-primary">Подробнее</div>
+                        <p>Мы создаем веб-сайты на самой популярной платформе - WordPress</p>
                     </div>
-                </a>
+                </div>
                 <!-- /.feature -->
-                <a href="#" class="feature">
+                <div class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -351,13 +349,11 @@ get_header();
                     <!-- /.icon -->
                     <div class="text">
                         <div class="h3">Мобильная Адаптация</div>
-                        <p>Наши работы полностью адаптированны для мобильных устройств. Ваш вебсайт будет выглядеть одинаково прекрасно!</p>
-                        
-                        <div class="btn btn-primary">Подробнее</div>
+                        <p>Наши работы полностью адаптированны для мобильных устройств. Ваш веб-сайт будет выглядеть одинаково прекрасно!</p>
                     </div>
-                </a>
+                </div>
                 <!-- /.feature -->
-                <a href="#" class="feature">
+                <div class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -378,13 +374,11 @@ get_header();
                     <!-- /.icon -->
                     <div class="text">
                         <div class="h3">Аналитика и Статистика</div>
-                        <p>Мы подключим самые удобные системы Аналитики и сбора Статистики. Вы будете всегда в курсе достижений вашего Веб Сайта</p>
-                        
-                        <div class="btn btn-primary">Подробнее</div>
+                        <p>Мы подключим самые удобные системы Аналитики и сбора Статистики. Вы будете всегда в курсе достижений вашего веб-сайта</p>
                     </div>
-                </a>
+                </div>
                 <!-- /.feature -->
-                <a href="#" class="feature">
+                <div class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -404,13 +398,11 @@ get_header();
                     <!-- /.icon -->
                     <div class="text">
                         <div class="h3">Онлайн Маркетинг</div>
-                        <p>Мы поможем Вам интегрировать Ваш новый веб сайт с Социальными Сетями и Медиа Ресурсами</p>
-                        
-                        <div class="btn btn-primary">Подробнее</div>
+                        <p>Мы поможем Вам интегрировать Ваш новый веб-сайт с Социальными Сетями и Медиа Ресурсами</p>
                     </div>
-                </a>
+                </div>
                 <!-- /.feature -->
-                <a href="#" class="feature">
+                <div class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -431,12 +423,10 @@ get_header();
                     <div class="text">
                         <div class="h3">Безопасность</div>
                         <p>Наши системы безопасности способны отразить более 95% постоянных атак. Мы позаботимся о Вашем спокойствии</p>
-                        
-                        <div class="btn btn-primary">Подробнее</div>
                     </div>
-                </a>
+                </div>
                 <!-- /.feature -->
-                <a href="#" class="feature">
+                <div class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -458,11 +448,9 @@ get_header();
                     <!-- /.icon -->
                     <div class="text">
                         <div class="h3">СЕО Оптимизация</div>
-                        <p>Мы проведем оптимизацию вашего Веб Сайта для более лучшей индексации поисковыми системами</p>
-                        
-                        <div class="btn btn-primary">Подробнее</div>
+                        <p>Мы проведем оптимизацию вашего веб-сайта для более лучшей индексации поисковыми системами</p>
                     </div>
-                </a>
+                </div>
                 <!-- /.feature -->
             </div>
         </div>
@@ -470,57 +458,7 @@ get_header();
     </div>
     <!-- /#our-features.section -->
 
-
-    <div class="section" id="about">
-        <div class="container">
-            <div class="row">   
-                <div class="column-info col">
-                    <img src="<?php bloginfo('template_url') ?>/src/img/logo.svg" alt="logo" class="background">
-
-                    <div class="h2">Goliath Web Services LTD</div>
-
-                    <div class="info">
-                        <div class="info-with-icon">
-                            <div class="icon">
-                                <img src="<?php bloginfo('template_url') ?>/src/img/icons/pin.svg" alt="phone">
-                            </div>
-                            <div class="text">
-                                <div class="h3">Офис</div>
-                                <p>Хотите обсудить проект лично при встрече? Приходите:</p>
-                                <a href="#about" class="primary"><?=ADRESS?></a>
-                                <div class="small">Пн-ПТ с 10:00 до 18:00</div>
-                            </div>
-                        </div>
-                        <div class="info-with-icon">
-                            <div class="icon">
-                                <img src="<?php bloginfo('template_url') ?>/src/img/icons/phone.svg" alt="phone">
-                            </div>
-                            <div class="text">
-                                <div class="h3">Позвоните</div>
-                                <p>Позвоните нам и мы проконсультируем Вас по вопросам Вашего проекта. </p>
-                                <a href="tel:<?=PHONE_HREF?>" target="_blank" class="primary"><?=PHONE?></a>
-                                <div class="small">Пн-ПТ с 10:00 до 18:00</div>
-                            </div>
-                        </div>
-                        <div class="info-with-icon">
-                            <div class="icon">
-                                <img src="<?php bloginfo('template_url') ?>/src/img/icons/mail.svg" alt="mail">
-                            </div>
-                            <div class="text">
-                                <div class="h3">Почта</div>
-                                <p>Отправьте нам заявку по Эл Почте и мы ответим на все Ваши вопросы</p>
-                                <a href="mailto:<?=EMAIL?>" target="_blank" class="primary"><?=EMAIL?></a>
-                            </div>
-                        </div> 
-                    </div>
-                    <!-- /.info -->
-                </div>
-                <div class="column-map col" id="map"></div>
-            </div>
-            <!-- /.custom-row -->
-        </div>
-    </div>
-    <!-- /#about.section -->
+    <?php get_template_part('template-parts/section-contacts'); ?>
 </div>
 <!-- /#home-page.template-area -->
 

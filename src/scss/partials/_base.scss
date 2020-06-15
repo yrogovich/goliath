@@ -39,7 +39,6 @@ body {
 
     @include md-block() {
         font-size: 1.3rem;
-        
     }
 }
 
@@ -48,6 +47,10 @@ body {
     @include wrapper();
 }
 
+.single-container {
+    @include wrapper();
+    max-width: 1160px;
+}
 .container-full {
     @include wrapper-full();
 }
@@ -73,18 +76,17 @@ body {
 
 
 // Tags
-.section {
+.section,
+.inner-section {
     padding: 13rem 0;
    
     &.gray {
         background-color: $background-color-secondary;
     }
+    h1,
     .h2 {
         text-align: center;
         margin-bottom: 3vw;
-    }
-    &.site-main {
-        padding-top: 5rem;
     }
     @include lg-block() {
         .h2 {
@@ -97,6 +99,20 @@ body {
             margin-bottom: 3rem;
         }
     }
+}
+#single {
+    h1.entry-title {
+        text-align: left;
+        margin-bottom: 0;
+    }
+}
+.section,
+.inner-section {
+    padding-top: 5rem;
+
+}
+.single-main {
+    padding-top: 5rem;
 }
 
 body,
