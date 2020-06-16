@@ -14,8 +14,10 @@ get_header();
         
 
             <div class="big-form">
-                <form action="" method="post" enctype="multipart/form-data">
-                    
+                <form action="" method="post" class="multipart-form" enctype="multipart/form-data">
+                    <input type="hidden" name="url" value="<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>">
+                    <input type="hidden" name="form_name" value="Заявка на создание сайта">
+                
                     <div class="input-wrapper">
                         <label>Предпочтительный язык</label>
                         <select name="select_lang">
@@ -143,6 +145,24 @@ get_header();
                         </div>
                     </div>
                     <!-- /.input-row -->
+
+                    <div class="attachment">
+                        <div class="attachment-area">
+                            <div class="area-text">
+                                <div class="h3">Загрузка файлов</div>
+                                <p>Прикрепите файлы для вашего сайта (Логотип компании, тексты, изображения, видео и т.д.)</p>
+                                <img src="<?php bloginfo('template_url') ?>/src/img/icons/file-upload.svg" alt="file-upload">
+                                <div class="h4">Перетащите файлы сюда для загрузки.</div>
+                                <div class="link">Или выберите фаил в проводнике</div>
+                            </div>
+                            <ul class="attachment-list">
+                            </ul>
+                            <!-- /.attachment-list -->
+                            <input type="file" name="myFile[]" multiple>
+                        </div>
+                        <!-- /.attachment-area -->
+                    </div>
+                    <!-- /#attachment -->
 
                     <div class="input-wrapper">
                         <label>Тип сайта</label>

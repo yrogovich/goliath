@@ -196,7 +196,7 @@ get_header();
                             <li>C-Panel без ограничений</li>
                             <li>Бесплатный SSL</li>
                         </ul>
-                        <div class="btn btn-primary">Узнать стоимость</div>
+                        <div class="btn btn-primary" data-fancybox data-src="#calc-price-modal">Узнать стоимость</div>
                     </div>
                 </div>
                 <!-- /.service -->
@@ -238,7 +238,7 @@ get_header();
                             <li>Система резерных копий</li>
                             <li>Предоставим отчет</li>
                         </ul>
-                        <div class="btn btn-primary">Узнать стоимость</div>
+                        <div class="btn btn-primary" data-fancybox data-src="#calc-price-modal">Узнать стоимость</div>
                     </div>
                 </div>
                 <!-- /.service -->
@@ -284,8 +284,6 @@ get_header();
                             get_template_part( 'template-parts/card', get_post_type() );
                         } 
                     }
-                } else {
-                    // Постов не найдено
                 }
                 // Возвращаем оригинальные данные поста. Сбрасываем $post.
                 wp_reset_postdata();

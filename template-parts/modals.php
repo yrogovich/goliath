@@ -19,18 +19,18 @@
 				<input type="hidden" name="form_name" value="Узнать стоимость">
 
 				<div class="input-wrapper">
-					<label for="#name">Имя*</label>
-					<input type="text" name="name" id="name" placeholder="Иван петров" required>
+					<label >Имя*</label>
+					<input type="text" name="name" placeholder="Иван петров" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
-					<label for="#phone">Ваш мобильный телефон*</label>
-					<input type="text" name="phone" id="phone" placeholder="+1 234 5678 910" required>
+					<label>Ваш мобильный телефон*</label>
+					<input type="text" name="phone" placeholder="+1 234 5678 910" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
-					<label for="#phone">Комментарий</label>
-					<textarea name="message" id="phone" placeholder="По какой услуге узнать стоимость?"></textarea>
+					<label>Комментарий</label>
+					<textarea name="message" placeholder="По какой услуге узнать стоимость?"></textarea>
 				</div>
 				<!-- /.input-wrapper -->
 
@@ -71,18 +71,18 @@
 				<input type="hidden" name="form_name" value="Заказать аналогичный проект">
 
 				<div class="input-wrapper">
-					<label for="#name">Имя*</label>
-					<input type="text" name="name" id="name" placeholder="Иван петров" required>
+					<label>Имя*</label>
+					<input type="text" name="name" placeholder="Иван петров" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
-					<label for="#phone">Ваш мобильный телефон*</label>
-					<input type="text" name="phone" id="phone" placeholder="+1 234 5678 910" required>
+					<label>Ваш мобильный телефон*</label>
+					<input type="text" name="phone" placeholder="+1 234 5678 910" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
-					<label for="#phone">Комментарий</label>
-					<textarea name="message" id="phone" placeholder="Можете что-то добавить.."></textarea>
+					<label>Комментарий</label>
+					<textarea name="message" placeholder="Можете что-то добавить.."></textarea>
 				</div>
 				<!-- /.input-wrapper -->
 
@@ -123,18 +123,18 @@
 				<input type="hidden" name="form_name" value="Бесплатная консультация">
 
 				<div class="input-wrapper">
-					<label for="#name">Имя*</label>
-					<input type="text" name="name" id="name" placeholder="Иван петров" required>
+					<label >Имя*</label>
+					<input type="text" name="name" placeholder="Иван петров" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
-					<label for="#phone">Ваш мобильный телефон*</label>
-					<input type="text" name="phone" id="phone" placeholder="+1 234 5678 910" required>
+					<label>Ваш мобильный телефон*</label>
+					<input type="text" name="phone" placeholder="+1 234 5678 910" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
-					<label for="#phone">Комментарий</label>
-					<textarea name="message" id="phone" placeholder="Опишите кратко, что Вас интересует"></textarea>
+					<label>Комментарий</label>
+					<textarea name="message" placeholder="Опишите кратко, что Вас интересует"></textarea>
 				</div>
 				<!-- /.input-wrapper -->
 

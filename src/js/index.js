@@ -24,32 +24,37 @@ $(function() {
 
     // Form handler
     $('form').submit(function(event) {
-        event.preventDefault();
-
-        console.log('form func is running');
-
-        let msg = jQuery(this).serialize();
-
-        jQuery.ajax({
-            type: 'POST',
-            url: `${templateUrl}/send.php`,
-            data: msg,
-            success: function(data) {
-                console.log('form ok');
-                $.fancybox.close();
-                $.fancybox.open({
-                    src: '#thanks-modal', 
-                    modal: true
-                });
-                // setTimeout(() => { 
-                //     $.fancybox.close();
-                // }, 2000);
-            },
-            error: function () {
-                console.log('form error');
-                $.fancybox.close();
-            }
-        });
+        console.log("Отправка запроса");
+        event.preventDefault ? event.preventDefault() : event.returnValue = false;
+        var req = new XMLHttpRequest();
+        req.open('POST', `${templateUrl}/src/send.php`, true);
+        req.onload = function() {
+            if (req.status >= 200 && req.status < 400) {
+            json = JSON.parse(this.response);
+                console.log(json);
+                
+                if (json.result == "success") {
+                    // Если сообщение отправлено
+                    console.log("Сообщение отправлено");
+                    $.fancybox.close();
+                    $.fancybox.open({
+                        src: '#thanks-modal', 
+                        modal: true
+                    });
+                    setTimeout(() => { 
+                        $.fancybox.close();
+                    }, 2000);
+                } else {
+                    // Если произошла ошибка
+                    console.log("Ошибка. Сообщение не отправлено");
+                    $.fancybox.close();
+                }
+            // Если не удалось связаться с php файлом
+            } else {console.log("Ошибка сервера. Номер: "+req.status);}}; 
+        
+        // Если не удалось отправить запрос. Стоит блок на хостинге
+        req.onerror = function() {console.log("Ошибка отправки запроса");};
+        req.send(new FormData(event.target));
     });
 
     // Menu toggle script
@@ -82,22 +87,54 @@ $(function() {
         console.log(`AOS plugin error: ${error}`);
     }
 
+    // Cookie check script
+    let cookieAlert = $('.cookie-alert');
+    let cookieAlertButton = $('.cookie-alert button');
+
+    if (!localStorage.getItem('cookie')) {
+        setTimeout(() => cookieAlert.addClass('not-accepted'), 4000);
+    }  
+
+    cookieAlertButton.click(() => {
+        localStorage.setItem('cookie', 'accepted');
+        cookieAlert.removeClass('not-accepted');
+    });
+
+
+    ////attachments
+    $('.attachment input').change(function() {
+        const fileList = this.files;
+        let text = $('.attachment .area-text');
+        let ul = $('.attachment-list');
+
+        ul.empty();
+        text.css('display', 'none');
+
+        ul.append(`<li>Количество прикреплённых файлов: ${fileList.length}</li>`);
+        for(let i = 0; i <= fileList.length; i++) {
+           ul.append(`<li>${fileList[i].name}</li>`);
+        }
+    });
 
     //  Show ymaps on scroll
-    let point = $('#technologiesAndProjects');
-    if(!point.length) {
-        showMap();
-    }
-
-    let pointTop = point.offset().top;
-    let handler = function () {
-        let windowTop = $(this).scrollTop();
-        console.log(typeof(point));
-        if (windowTop > pointTop || point == null) {
+    createMapHandler();
+    function createMapHandler() {
+        let point = $('#technologiesAndProjects');
+        if(!point.length) {
             showMap();
+            return;
         }
-    };
-    $(window).bind( "scroll", handler );  
+
+        let pointTop = point.offset().top;
+        let handler = function () {
+            let windowTop = $(this).scrollTop();
+            console.log(typeof(point));
+            if (windowTop > pointTop || point == null) {
+                showMap();
+            }
+        };
+        $(window).bind( "scroll", handler );  
+    } 
 
     function showMap() {
         if( !$('#map').length ) {

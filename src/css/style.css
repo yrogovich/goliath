@@ -259,12 +259,11 @@ h3, .h3,
 h4, .h4,
 h5, .h5 {
   color: var(--heading-color);
-  font-weight: 700;
+  font-weight: bold;
   margin-bottom: 2rem;
 }
 
 h1 {
-  font-weight: bold;
   font-size: 6.8rem;
   font-size: 3.5vw;
 }
@@ -276,7 +275,6 @@ h1 {
 }
 
 h2, .h2 {
-  font-weight: bold;
   font-size: 3.6rem;
 }
 
@@ -287,13 +285,22 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-weight: bold;
   font-size: 2.2rem;
 }
 
 @media screen and (max-width: 780px) {
   h3, .h3 {
     font-size: 2rem;
+  }
+}
+
+h4, .h4 {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 780px) {
+  h4, .h4 {
+    font-size: 1.8rem;
   }
 }
 
@@ -2009,6 +2016,7 @@ a.primary {
 }
 
 .archive-main {
+  background: url("../img/archive/dots-circle.png") top center/contain repeat-y;
   padding-top: 5rem;
   padding-bottom: 13rem;
 }
@@ -2424,6 +2432,129 @@ a.primary {
   transform-origin: center center;
   background-color: var(--primary);
   transition: .3s;
+}
+
+.attachment {
+  margin-bottom: 3rem;
+}
+
+.attachment-area {
+  position: relative;
+  width: 100%;
+  min-height: 30rem;
+  border: 2px dashed var(--input-bg);
+  margin-bottom: 1rem;
+  transition: .3s ease-in-out;
+}
+
+.attachment-area input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.attachment-area .area-text {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.attachment-area img {
+  margin-bottom: 1rem;
+}
+
+.attachment-area .h4 {
+  color: var(--font-color);
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.attachment-area:hover {
+  border-color: var(--primary);
+}
+
+.attachment-list {
+  width: 100%;
+  height: 100%;
+  color: var(--heading-color);
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.p404 h1 {
+  margin-bottom: 0;
+}
+
+.cookie-alert {
+  transform: translateY(100%);
+  transition: 0.8s cubic-bezier(0.4, 0.01, 0.02, 0.98);
+  position: fixed;
+  z-index: 99;
+  background: var(--input-bg);
+  padding: 10px 15px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  width: 100%;
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookie-alert.not-accepted {
+  transform: none;
+}
+
+.cookie-alert__text {
+  margin: .5rem;
+  flex: 1 1 300px;
+}
+
+.cookie-alert__text a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.cookie-alert__text a:hover {
+  text-decoration: none;
+}
+
+.cookie-alert__btn {
+  color: var(--heading-color);
+  margin: .5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 30px;
+  border: 1px solid var(--primary);
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+  background: none;
+}
+
+.cookie-alert__btn:hover {
+  background-color: var(--primary);
+}
+
+@media (max-width: 500px) {
+  .cookie-alert__btn {
+    width: 100%;
+  }
 }
 
 .italic {

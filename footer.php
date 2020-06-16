@@ -98,6 +98,12 @@
     </div>
 </div><!-- #page -->
 
+<!-- Cookie-alert -->
+<div class="cookie-alert">
+  <div class="cookie-alert__text">Сайт использует куки-файлы, чтобы включить основные функции веб-сайта, предложить вам лучший опыт, анализировать трафик и обслуживать целевую рекламу. Для получения дополнительной информации о файлах cookie, см. <a href="<?=get_privacy_policy_url()?>">Нашу политику конфиденциальности</a></div>
+  <button class="cookie-alert__btn">Принять</button>
+</div>
+
 <?php get_template_part('template-parts/modals'); ?>
 
 <div class="mobile-menu">

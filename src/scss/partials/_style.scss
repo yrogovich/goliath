@@ -1459,6 +1459,8 @@ a.primary {
 }
 
 .archive-main {
+    background: url('../img/archive/dots-circle.png') top center / contain repeat-y;
+
     padding-top: 5rem;
     padding-bottom: 13rem;
     @include sm-block() {
@@ -1844,4 +1846,124 @@ a.primary {
         background-color: $primary;
         transition: .3s;
     }
+}
+
+.attachment {
+    margin-bottom: 3rem;
+    &-area {
+        position: relative;
+        width: 100%;
+        min-height: 30rem;
+        border: 2px dashed $input-bg;
+        margin-bottom: 1rem;
+
+        transition: .3s ease-in-out;
+
+        input {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+        .area-text {
+            padding: 2rem;
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            margin-bottom: 1rem;
+        }
+        .h4 {
+            color: $font-color;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        &:hover {
+            border-color: $primary;
+        }
+    }
+    &-list {
+        width: 100%;
+        height: 100%;
+        color: $heading-color;
+        font-size: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.p404 {
+    h1 {
+        margin-bottom: 0;
+    }
+}
+
+// Cookie alert styles
+.cookie-alert {
+  transform: translateY(100%);
+  transition: .8s cubic-bezier(0.4, 0.01, 0.02, 0.98);
+  
+  position: fixed;
+  z-index: 99;
+  background: $input-bg;
+  padding: 10px 15px;
+  
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  width: 100%;
+  
+  font-size: 12px;
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  &.not-accepted {
+      transform: none;
+  }
+  &__text {
+    margin: .5rem;
+    flex: 1 1 300px;
+    a {
+      color: $primary;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &__btn {
+      color: $heading-color;
+      margin: .5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 10px 30px;
+      border: 1px solid $primary;
+      transition: .3s ease-in-out;
+      cursor: pointer;
+      text-align: center;
+      background: none;
+    &:hover {
+      background-color: $primary;
+    }
+  }
+  @media (max-width: 500px) {
+    &__btn {
+       width: 100%;
+    }
+  }
 }
