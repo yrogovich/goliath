@@ -2016,7 +2016,8 @@ a.primary {
 }
 
 .archive-main {
-  background: url("../img/archive/dots-circle.png") top center/contain repeat-y;
+  background: url("../img/archive/dots-circle.png") top center;
+  background-repeat: repeat-y;
   padding-top: 5rem;
   padding-bottom: 13rem;
 }

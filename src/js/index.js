@@ -117,16 +117,14 @@ $(function() {
     });
 
     //  Show ymaps on scroll
-    createMapHandler();
-    function createMapHandler() {
-        let point = $('#technologiesAndProjects');
-        if(!point.length) {
-            showMap();
-            return;
-        }
-
+    let point = $('#technologiesAndProjects');
+    let handler;
+    if(!point.length) {
+        showMap();
+        return;
+    } else {
         let pointTop = point.offset().top;
-        let handler = function () {
+        handler = function () {
             let windowTop = $(this).scrollTop();
             console.log(typeof(point));
             if (windowTop > pointTop || point == null) {
@@ -134,12 +132,12 @@ $(function() {
             }
         };
         $(window).bind( "scroll", handler );  
-    } 
+    }
 
     function showMap() {
-        if( !$('#map').length ) {
-            return;
-        }
+        // if( !$('#map').length ) {
+        //     return;
+        // }
 
         $('#map').html('<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.883043148375!2d-0.2356441764747555!3d51.588706879118114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610d7f771e71d%3A0x5a0ce33e7eec2ce4!2zUmFtYmxlciBDb3VydCwgNyBTd3luZm9yZCBHYXJkZW5zLCBMb25kb24gTlc0IDRYTCwg0JLQtdC70LjQutC-0LHRgNC40YLQsNC90LjRjw!5e0!3m2!1sru!2sby!4v1591343516925!5m2!1sru!2sby" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>');
 

@@ -1,5 +1,3 @@
-
-
 <div class="project">
     <a href="<?php the_permalink() ?>">
         <div class="h3"><?php the_title(); ?></div>
