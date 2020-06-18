@@ -980,6 +980,7 @@ svg .background-color {
 }
 
 .prices-block {
+  cursor: pointer;
   flex: 1 1 41rem;
   padding: 2rem;
   max-width: 55rem;
@@ -1049,10 +1050,6 @@ svg .background-color {
 .prices-block .btn {
   margin-top: auto;
   align-self: flex-start;
-}
-
-.prices-block .btn:before {
-  width: 100%;
 }
 
 .prices-block:hover {
@@ -1798,10 +1795,18 @@ a.primary {
   text-align: center;
 }
 
-.modal form .btn {
+.modal .btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: -1rem -2rem;
+}
+
+.modal .btns .btn {
   font-size: 1.6rem;
   background: none;
-  margin-top: 1rem;
+  margin: 2rem 2rem 1rem 2rem;
 }
 
 .modal .privacy-text {
@@ -1813,6 +1818,15 @@ a.primary {
 }
 
 @media screen and (max-width: 780px) {
+  .modal .btns {
+    margin: 0 -1rem;
+  }
+  .modal .btns .btn {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
   .modal .column-about .text {
     padding: 3rem 3rem 0 3rem;
   }
@@ -1823,12 +1837,19 @@ a.primary {
     padding: 2rem 3rem;
     border: 1px solid var(--heading-color);
   }
-  .modal form .btn {
-    font-size: 1.5rem;
-    margin-top: 0;
-  }
   .modal .privacy-text {
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 339px) {
+  .modal .btns {
+    margin: 0 -5rem;
+  }
+  .modal .btns .btn {
+    margin-left: 0.5rem;
+    margin-right: .5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -1867,6 +1888,7 @@ a.primary {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 #single .heading .title,
@@ -1919,10 +1941,18 @@ a.primary {
   margin-bottom: 7rem;
 }
 
+#single .main-image img {
+  width: 100%;
+}
+
 #single .mockup-image {
   width: 100%;
   margin-top: 4rem;
   display: block;
+}
+
+#single .mockup-image img {
+  width: 100%;
 }
 
 #single .like-this {
@@ -2555,6 +2585,16 @@ a.primary {
 @media (max-width: 500px) {
   .cookie-alert__btn {
     width: 100%;
+  }
+}
+
+#cost-page .features {
+  margin-bottom: -10rem;
+}
+
+@media screen and (max-width: 960px) {
+  #cost-page .features {
+    margin-bottom: -5rem;
   }
 }
 

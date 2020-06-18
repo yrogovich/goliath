@@ -584,6 +584,7 @@ svg {
     }
 
     &-block {
+        cursor: pointer;
         flex: 1 1 41rem;
         padding: 2rem;
         max-width: 55rem;
@@ -648,9 +649,6 @@ svg {
         .btn {
             margin-top: auto;
             align-self: flex-start;
-            &:before {
-                width: 100%;
-            }
         }
 
         &:hover{
@@ -1222,7 +1220,6 @@ a.primary {
     display: none;
 
     width: 97rem;
-    // min-height: 60rem;
     padding: 0;
     background-color: $background-color-primary;
 
@@ -1268,10 +1265,18 @@ a.primary {
     form {
         width: 100%;
         text-align: center;
+       
+    }
+    .btns {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: -1rem -2rem;
         .btn {
             font-size: 1.6rem;
             background: none;
-            margin-top: 1rem;
+            margin: 2rem 2rem 1rem 2rem;
         }
     }
     .privacy-text {
@@ -1282,6 +1287,15 @@ a.primary {
         display: block;
     }
     @include sm-block() {
+        .btns {
+            margin: 0 -1rem;
+            .btn {
+                font-size: 1.5rem;
+                margin-top: 0;
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
         .column-about {
             .text {
                 padding: 3rem 3rem 0 3rem;
@@ -1294,14 +1308,18 @@ a.primary {
             padding: 2rem 3rem;
             border: 1px solid $heading-color;
         }
-        form {
-            .btn {
-                font-size: 1.5rem;
-                margin-top: 0;
-            }
-        }
         .privacy-text {
             margin-top: 1rem;
+        }
+    }
+    @media (max-width: $iphone-5) {
+        .btns {
+            margin: 0 -5rem;
+            .btn {
+                margin-left: 0.5rem;
+                margin-right: .5rem;
+                font-size: 1.3rem;
+            }
         }
     }
 }
@@ -1338,6 +1356,7 @@ a.primary {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
 
         .title,
         .description {
@@ -1380,11 +1399,17 @@ a.primary {
     .main-image {
         width: 100%;
         margin-bottom: 7rem;
+        img {
+            width: 100%;
+        }
     }
     .mockup-image {
         width: 100%;
         margin-top: 4rem;
         display: block;
+        img {
+            width: 100%;    
+        }
     }
     .like-this {
         margin-top: 5rem;
@@ -1967,4 +1992,13 @@ a.primary {
        width: 100%;
     }
   }
+}
+
+#cost-page {
+    .features {
+       margin-bottom: -10rem;
+       @include md-block() {
+           margin-bottom: -5rem;
+       }
+    }
 }

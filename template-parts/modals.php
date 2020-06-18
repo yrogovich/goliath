@@ -20,7 +20,7 @@
 
 				<div class="input-wrapper">
 					<label >Имя*</label>
-					<input type="text" name="name" placeholder="Иван петров" required>
+					<input type="text" name="name" placeholder="" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
@@ -34,10 +34,68 @@
 				</div>
 				<!-- /.input-wrapper -->
 
-				<button class="btn btn-primary">
-					Узнать стоимость
-				</button>
+				<div class="btns">
+					<a href="<?=WHATSAPP_LINK?>" target="_blank" class="btn btn-whatsapp">Whatsapp</a>
 
+					<button class="btn btn-primary">
+						Отправить
+					</button>
+				</div>
+	
+				<label class="custom-checkbox privacy-text">
+					<input type="checkbox" checked required>
+					<span>Я согласен на обработку <a href="<?=get_privacy_policy_url()?>">персональных данных</a></span>
+				</label>	
+			</form>
+		</div>
+		<!-- /.column-form -->
+	</div>
+	<!-- /.custom-row -->
+</div>
+
+<!-- Modal HTML embedded directly into document -->
+<div id="order-modal" class="modal"> 
+	<div class="custom-row">
+		<div class="column-about">
+			<div class="text">
+				<div class="h2">Заказать разработку</div>
+				<p>Заполните поля формы, мы свяжемся с Вами в ближайшее время.</p>
+			</div>
+			<!-- /.text -->
+			
+			<div class="image">
+				<img data-src="<?php bloginfo('template_url') ?>/src/img/modal-img.jpg" alt="goliath" class="lazy">
+			</div>
+		</div>
+		<!-- /.column-about -->
+		<div class="column-form">
+			<form>
+				<input type="hidden" name="url" value="<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>">
+				<input type="hidden" name="form_name" value="Заказать разработку">
+
+				<div class="input-wrapper">
+					<label >Имя*</label>
+					<input type="text" name="name" placeholder="" required>
+				</div>
+				<!-- /.input-wrapper -->
+				<div class="input-wrapper">
+					<label>Ваш мобильный телефон*</label>
+					<input type="text" name="phone" placeholder="+1 234 5678 910" required>
+				</div>
+				<!-- /.input-wrapper -->
+				<div class="input-wrapper">
+					<label>Комментарий</label>
+					<textarea name="message" placeholder="Коротко, о том, что нам важно знать"></textarea>
+				</div>
+				<!-- /.input-wrapper -->
+
+				<div class="btns">
+					<a href="<?=WHATSAPP_LINK?>" target="_blank" class="btn btn-whatsapp">Whatsapp</a>
+
+					<button class="btn btn-primary">
+						Заказать
+					</button>
+				</div>
 	
 				<label class="custom-checkbox privacy-text">
 					<input type="checkbox" checked required>
@@ -72,7 +130,7 @@
 
 				<div class="input-wrapper">
 					<label>Имя*</label>
-					<input type="text" name="name" placeholder="Иван петров" required>
+					<input type="text" name="name" placeholder="" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
@@ -86,10 +144,13 @@
 				</div>
 				<!-- /.input-wrapper -->
 
-				<button class="btn btn-primary">
-					Узнать стоимость
-				</button>
+				<div class="btns">
+					<a href="<?=WHATSAPP_LINK?>" target="_blank" class="btn btn-whatsapp">Whatsapp</a>
 
+					<button class="btn btn-primary">
+						Заказать
+					</button>
+				</div>
 	
 				<label class="custom-checkbox privacy-text">
 					<input type="checkbox" checked required>
@@ -124,7 +185,7 @@
 
 				<div class="input-wrapper">
 					<label >Имя*</label>
-					<input type="text" name="name" placeholder="Иван петров" required>
+					<input type="text" name="name" placeholder="" required>
 				</div>
 				<!-- /.input-wrapper -->
 				<div class="input-wrapper">
@@ -138,10 +199,13 @@
 				</div>
 				<!-- /.input-wrapper -->
 
-				<button class="btn btn-primary">
-					Получить консультацию
-				</button>
+				<div class="btns">
+					<a href="<?=WHATSAPP_LINK?>" target="_blank" class="btn btn-whatsapp">Whatsapp</a>
 
+					<button class="btn btn-primary">
+						Отправить
+					</button>
+				</div>
 	
 				<label class="custom-checkbox privacy-text">
 					<input type="checkbox" checked required>

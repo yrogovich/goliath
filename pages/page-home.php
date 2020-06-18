@@ -280,9 +280,7 @@ get_header();
                     while ( $query->have_posts() ) {
                         $query->the_post();
 
-                        for($i=1; $i <= 6; $i++){
-                            get_template_part( 'template-parts/card', get_post_type() );
-                        } 
+                        get_template_part( 'template-parts/card', get_post_type() );
                     }
                 }
                 // Возвращаем оригинальные данные поста. Сбрасываем $post.

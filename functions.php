@@ -184,12 +184,14 @@ add_action( 'init', 'disable_wp_emojicons' );
  * Set sizes for media library
  */
 function primo_theme_add_sizes() {
-	add_image_size( 'max', 4000, 4000, false);
+	add_image_size( 'max', 1920, 15000, false);
 
 	add_image_size( 'project_full', 1200, 660);
 	add_image_size( 'project_thumbinail', 550, 320);
 }
 add_action( 'after_setup_theme', 'primo_theme_add_sizes');
+
+add_filter( 'big_image_size_threshold', '__return_false' );
 
 add_action('init', 'my_custom_init');
 function my_custom_init(){

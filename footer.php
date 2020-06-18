@@ -67,14 +67,9 @@
 
                     <ul class="menu">
                         <li>Разработка сайтов</li>
-                        <li>Поддержка сайтов 24/7</li>
-                        <li>Очистка заражений</li>
-                        <li>Работа с WordPress</li>
-                        <li>Мобильная Адаптация</li>
-                        <li>Аналитика и Статистика</li>
-                        <li>Онлайн Маркетинг</li>
-                        <li>Безопасность</li>
-                        <li>СЕО Оптимизация</li>
+                        <li>СЕО продвижение сайтов</li>
+                        <li><a href="https://gwshosting.com/billing/cart.php?gid=5" target="_blank" rel="noopener noreferrer">Поддержка сайтов 24/7</a></li>
+                        <li><a href="https://gwshosting.com/billing/cart.php?gid=6" target="_blank" rel="noopener noreferrer">Очистка от вирусов</a></li>
                     </ul>
                 </div>
                 <!-- /.col col-3 -->
@@ -82,10 +77,12 @@
                     <div class="h3">Хостинг и домен</div>
 
                     <ul class="menu">
-                        <li>Регистрация домена</li>
-                        <li>Word Press Хостинг</li>
-                        <li>Cloud хостинг</li>
-                        <li>Web хостинг</li>
+                        <li><a href="https://gwshosting.com/billing/cart.php?a=add&domain=register" target="_blank" rel="noopener noreferrer">Регистрация домена</a></li>
+                        <li><a href="https://gwshosting.com/billing/cart.php?a=add&domain=transfer" target="_blank" rel="noopener noreferrer">Трансфер домена</a></li>
+                        <li><a href="https://gwshosting.com/billing/cart.php?gid=1" target="_blank" rel="noopener noreferrer">Cloud hosting</a></li>
+                        <li><a href="https://gwshosting.com/billing/cart.php?gid=2" target="_blank" rel="noopener noreferrer">WordPress hosting</a></li>
+                        <li><a href="https://gwshosting.com/billing/cart.php?gid=3" target="_blank" rel="noopener noreferrer">Web hosting</a></li>
+                        <li><a href="https://gwshosting.com/billing/cart.php?gid=4" target="_blank" rel="noopener noreferrer">WooCommerce hosting</a></li>   
                     </ul>
                 </div>
                 <!-- /.col col-4 -->

@@ -20,16 +20,20 @@
                     </div>
                 </div>
                 <!-- /.values -->
+                <?php if(get_field('site_link')): ?>
                 <div class="values">
                     <div class="name">Адрес сайта:</div>
                     <a target="_blank" href="http://<?php the_field('site_link') ?>"><?php the_field('site_link') ?></a>
                 </div>
                 <!-- /.values -->
+                <?php endif; ?>
+                <?php if(get_field('host_link')): ?>
                 <div class="values">
                     <div class="name">Хостинг:</div>
                     <a target="_blank" href="http://<?php the_field('host_link') ?>"><?php the_field('host_link') ?></a>
                 </div>
                 <!-- /.values -->
+                <?php endif; ?>
                 <div class="values">
                     <div class="name">Мониторинг:</div>
                     <div class="property">
@@ -64,26 +68,34 @@
         <?php endif; ?> 
         
         <div class="project-features">
+            <?php if(get_field('adaptive_design')): ?>
             <div class="project-feature">
                 <img data-src="<?php bloginfo('template_url') ?>/src/img/single/icon-1.svg" alt="adaptive" class="lazy" />
                 <p>Адаптивный дизайн</p>
             </div>
             <!-- /.project-feature -->
+            <?php endif; ?>
+            <?php if(get_field('seo_optimization')): ?>
             <div class="project-feature">
                 <img data-src="<?php bloginfo('template_url') ?>/src/img/single/icon-2.svg" alt="seo" class="lazy" />
                 <p>СЕО оптимизация</p>
             </div>
             <!-- /.project-feature -->
+            <?php endif; ?>
+            <?php if(get_field('security')): ?>
             <div class="project-feature">
                 <img data-src="<?php bloginfo('template_url') ?>/src/img/single/icon-3.svg" alt="secure" class="lazy" />
                 <p>Защита+</p>
             </div>
             <!-- /.project-feature -->
+            <?php endif; ?>
+            <?php if(get_field('on_our_hosting')): ?>
             <div class="project-feature">
                 <img data-src="<?php bloginfo('template_url') ?>/src/img/single/icon-4.svg" alt="hosting" class="lazy" />
                 <p>На нашем хостинге</p>
             </div>
             <!-- /.project-feature -->
+            <?php endif; ?>
         </div>
         <!-- /.features -->
 

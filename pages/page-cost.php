@@ -13,8 +13,8 @@ get_header();
             <h1 class="h1"><?the_title()?></h1>
         
 
-            <div class="prices">
-                <a href="<?=get_home_url(null, 'order-site') ?>" class="prices-block">
+            <div class="prices" >
+                <div data-fancybox data-src="#order-modal" class="prices-block">
                     <div class="head">
                         <div class="h3">Лендинг</div>
 
@@ -48,9 +48,9 @@ get_header();
                     </div>
                     <!-- /.body -->
                     <div class="btn btn-primary">Заказать</div>
-                </a>
+                </div>
                 <!-- /.price -->
-                <a href="<?=get_home_url(null, 'order-site') ?>" class="prices-block">
+                <div data-fancybox data-src="#order-modal" class="prices-block">
                     <div class="head">
                         <div class="h3">Бизнес сайт</div>
 
@@ -84,9 +84,9 @@ get_header();
                     </div>
                     <!-- /.body -->
                     <div class="btn btn-primary">Заказать</div>
-                </a>
+                </div>
                 <!-- /.price -->
-                <a href="<?=get_home_url(null, 'order-site') ?>" class="prices-block">
+                <div data-fancybox data-src="#order-modal" class="prices-block">
                     <div class="head">
                         <div class="h3">Интернет магазин</div>
 
@@ -101,7 +101,7 @@ get_header();
                     </div>
                     <!-- /.head -->
                     <div class="img-wrapper">
-                        <img src="<?php bloginfo('template_url') ?>/src/img/cost/landing.jpg" alt="landing">
+                        <img src="<?php bloginfo('template_url') ?>/src/img/cost/e-commerce.jpg" alt="e-commerce">
                     </div>
                     <!-- /.img-wrapper -->
                     <div class="body">
@@ -124,7 +124,7 @@ get_header();
                     </div>
                     <!-- /.body -->
                     <div class="btn btn-primary">Заказать</div>
-                </a>
+                </div>
                 <!-- /.price -->
             </div>
             <!-- /.prices -->
@@ -138,7 +138,7 @@ get_header();
             <div class="h2">Дополнительные услуги</div>
 
             <div class="features row">
-                <div class="feature">
+                <a href="#" class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -181,10 +181,12 @@ get_header();
                     <div class="text">
                         <div class="h3">Хостинг и домен</div>
                         <p>Принимайте свой сайт на наших ультра быстрых ssd-серверах. с litespeed cache. бесплатно и авто ssl. с ценами, начинающимися от £ 1,99 в месяц.</p>
+
+                        <div class="btn btn-primary">Подробнее</div>
                     </div>
-                </div>
+                </a>
                 <!-- /.feature -->
-                <div class="feature">
+                <a href="#" class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -207,10 +209,12 @@ get_header();
                     <div class="text">
                         <div class="h3">Мониторинг</div>
                         <p>Наблюдайте наш опытную команду. всегда до даты. безопасные ежедневные резервные копии. ежедневная проверка безопасности. ежедневная проверка. дополнительный мониторинг. ежемесячные отчеты клиента</p>
+
+                        <div class="btn btn-primary">Подробнее</div>
                     </div>
-                </div>
+                </a>
                 <!-- /.feature -->
-                <div class="feature">
+                <a href="#" class="feature">
                     <div class="icon">
                         <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g class="outline-border" >
@@ -233,8 +237,10 @@ get_header();
                     <div class="text">
                         <div class="h3">Удаление вирусов</div>
                         <p>Ваш сайт был взломан или введен? наша команда безопасности может очистить его в течение часов в зависимости от файловой системы и количества средств</p>
+
+                        <div class="btn btn-primary">Подробнее</div>
                     </div>
-                </div>
+                </a>
                 <!-- /.feature -->
             </div>
         </div>

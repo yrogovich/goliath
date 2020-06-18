@@ -23,10 +23,10 @@ get_header();
     <!-- /.header -->
 
     <div class="single-container">
-        <div class="archive-portfolio">
-            <?php if ( have_posts() ) : ?>
-
-                <?php
+        
+            <?php if ( have_posts() ) : 
+                echo '<div class="archive-portfolio">';
+                
                 /* Start the Loop */
                 while ( have_posts() ) :
                     the_post();
@@ -36,19 +36,19 @@ get_header();
                     * If you want to override this in a child theme, then include a file
                     * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                     */
-                    for($i=1; $i <= 6; $i++){
-                        echo '<div class="bordered" data-aos="fade-up">';
-                        get_template_part( 'template-parts/card', get_post_type() );
-                        echo '</div>';
-                    }
+
+                    echo '<div class="bordered" data-aos="fade-up">';
+                    get_template_part( 'template-parts/card', get_post_type() );
+                    echo '</div>';
 
                 endwhile;
+                echo '</div>';
 
-                the_posts_navigation();
+                // the_posts_navigation();
 
             endif;
             ?>
-        </div>
+        
     </div>
 
 </main><!-- #main -->

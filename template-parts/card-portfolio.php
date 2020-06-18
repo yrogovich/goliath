@@ -23,7 +23,7 @@
 
         <span class="small">
         <?php 
-            $terms = get_the_terms( $post->ID, 'category' ); 
+            $terms = get_the_terms( $post->ID, 'type' ); 
             if( $terms ){
                 $term = array_shift( $terms );
                 echo $term->name;
