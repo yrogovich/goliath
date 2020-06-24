@@ -175,154 +175,181 @@
 //@include
 #home-page {
     .header {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        position: relative;
-
-        overflow: hidden;
-        max-width: 100%;
-        min-height: 78vh;
-
         .h1 {
-            font-weight: bold;
             font-size: 9vh;
-            margin-bottom: 3rem;
+            
+        }
+    }
+    .custom-row {
+        align-items: flex-start;
+        .col {
             @include md-block() {
-                margin-bottom: 2rem;
-            }
-            @include xs-block() {
-                font-size: 7vw;
+                &.c1 {
+                    margin-top: -3rem;
+                }
             }
         }
+    }
+    .decor {
+        &-small {
+            right: 13%;
+        }
+    }
+    .devices {
+        transform: translateX(15%);
+    }
+    @include md-block() {     
+        .devices {
+            transform: translateX(10%);
+        }
+    }
+}
+.header {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    position: relative;
 
-        .custom-row {
-            display: flex;
-            flex-wrap: wrap;
-            .col {
-               
+    overflow: hidden;
+    max-width: 100%;
+    min-height: 78vh;
+
+    .h1 {
+        font-weight: bold;
+        font-size: 6vh;
+        margin-bottom: 3rem;
+        @include md-block() {
+            margin-bottom: 2rem;
+        }
+        @include xs-block() {
+            font-size: 7vw;
+        }
+    }
+
+    .custom-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .col {
+           
+            &.c1 {
+                max-width: 61vh;
+            }
+            &.c2 {
+                flex: 1 1 47rem;
+                
+            }
+            @include md-block() {
                 &.c1 {
-                    max-width: 61vh;
+                    max-width: 100%;
+                    width: 100%;
                 }
                 &.c2 {
-                    flex: 1 1 47rem;
-                    
-                }
-                @include md-block() {
-                    &.c1 {
-                        max-width: 100%;
-                        width: 100%;
-                        margin-top: -3rem;
-                    }
-                    &.c2 {
-                        order: -1;
-                    }
+                    order: -1;
                 }
             }
         }
-        .devices {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+    }
+    .devices {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
 
-            position: relative;
-            transform: translateX(15%);
-            z-index: 1;
+        position: relative;
+        z-index: 1;
 
-            img {
-                transform-origin: center;
-            }
-            .macbook,
-            .ipad,
-            .iphone {
-                will-change: transform, scale, opacity;
-            }
-            .ipad-wrapper,
-            .iphone-wrapper {
-                position: absolute;
-            }
-            .ipad-wrapper { 
-                top: 53%;
-                left: 0;
-                transform: translateY(-50%) translateX(-50%);
-                width: 69vh;
-            }
-            .iphone-wrapper {
-                right: 0;
-                top: 40%;
-                transform: translateY(-50%);
-                width: 63vh;
-            }
-            
+        img {
+            transform-origin: center;
         }
-        .rectangle {
+        .macbook,
+        .ipad,
+        .iphone {
+            will-change: transform, scale, opacity;
+        }
+        .ipad-wrapper,
+        .iphone-wrapper {
             position: absolute;
-
-            height: 50vh;
-            left: 45%;
-            right: -50%;
+        }
+        .ipad-wrapper { 
+            top: 53%;
+            left: 0;
+            transform: translateY(-50%) translateX(-50%);
+            width: 69vh;
+        }
+        .iphone-wrapper {
+            right: 0;
             top: 40%;
             transform: translateY(-50%);
-            background-color: $primary;
-            z-index: -1;
+            width: 63vh;
         }
-        .decor {
-            z-index: -1;
-            &-big,
-            &-small {
-                position: absolute;
+        
+    }
+    .rectangle {
+        position: absolute;
+
+        height: 50vh;
+        left: 45%;
+        right: -50%;
+        top: 40%;
+        transform: translateY(-50%);
+        background-color: $primary;
+        z-index: -1;
+    }
+    .decor {
+        z-index: -1;
+        &-big,
+        &-small {
+            position: absolute;
+        }
+        &-big {
+            left: 0;
+            bottom: 15%;
+        }
+        &-small {
+            top: 7%;
+            right: 0%;
+        }
+    }
+    ul {
+        margin-bottom: 6rem;
+        font-size: 2rem;
+    }
+    @include lg-block() {   
+        .devices {
+            .ipad-wrapper { 
+                left: -2vw;
+                transform: translateY(-50%) translateX(-50%) scale(.6);
             }
-            &-big {
-                left: 0;
-                bottom: 15%;
+            .iphone-wrapper {
+                transform: translateY(-50%) scale(.5);
+                right: -5vw;
             }
-            &-small {
-                top: 7%;
-                right: 11%;
+        }
+        
+    }
+    @include md-block() {     
+        .devices {
+            .decor {
+                display: none;
+            }         
+            .ipad-wrapper { 
+                width: unset;
+                left: -3%;
             }
+            .iphone-wrapper {
+                width: unset;
+                right: -28%;
+            }
+        }
+        .rectangle {
+            height: 50vw;
+            left: 0%;
+            right: 0;
+            top: 25%;
+        
         }
         ul {
-            margin-bottom: 6rem;
-            font-size: 2rem;
-        }
-        @include lg-block() {   
-            .devices {
-                .ipad-wrapper { 
-                    left: -2vw;
-                    transform: translateY(-50%) translateX(-50%) scale(.6);
-                }
-                .iphone-wrapper {
-                    transform: translateY(-50%) scale(.5);
-                    right: -5vw;
-                }
-            }
-            
-        }
-        @include md-block() {     
-            .devices {
-                transform: translateX(10%);
-                .decor {
-                    display: none;
-                }         
-                .ipad-wrapper { 
-                    width: unset;
-                    left: -3%;
-                }
-                .iphone-wrapper {
-                    width: unset;
-                    right: -28%;
-                }
-            }
-            .rectangle {
-                height: 50vw;
-                left: 0%;
-                right: 0;
-                top: 25%;
-            
-            }
-            ul {
-                margin-bottom: 2rem;
-                font-size: 1.4rem;
-            }
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
         }
     }
 }
@@ -587,7 +614,7 @@ svg {
         cursor: pointer;
         flex: 1 1 41rem;
         padding: 2rem;
-        max-width: 55rem;
+        max-width: 57rem;
 
         transition: background .2s ease-in-out;
 
@@ -596,15 +623,23 @@ svg {
 
         .head {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
 
-            margin-left: -1rem;
-            margin-right: -1rem;
+            min-height: 70px;
+
+            margin-left: -.5rem;
+            margin-right: -.5rem;
 
             div {
-                margin: 0 1rem 2rem 1rem;
+                margin: 0 .5rem 2rem .5rem;
+                margin-bottom: 0;
+            }
+            .h3 { 
+                flex: 135 1 15rem;
+            }
+            .couple {
+                flex: 1 1 11rem;
             }
             .couple,
             .price {
@@ -644,7 +679,17 @@ svg {
                 margin-top: 0;
                 margin-bottom: 3rem;
             }
-           
+           .primary {
+               text-transform: uppercase;
+           }
+           .white {
+               font-size: 1.6rem;
+               color: $heading-color;
+               font-weight: bold;
+               @include sm-block() {
+                   font-size: 1.4rem;
+               }
+           }
         }
         .btn {
             margin-top: auto;
@@ -668,6 +713,15 @@ svg {
             }
             &:hover{
                 background-color: none;
+            }
+        }
+    }
+}
+.gray {
+    .prices {
+        &-block {
+            &:hover{
+                background-color: $background-color-primary;
             }
         }
     }
@@ -813,7 +867,7 @@ a.primary {
         }
 
         &:hover {
-            background-color: $background-color-primary;
+            background-color: $background-color-secondary;
             svg {
                 .outline-border {
                     opacity: 1;
@@ -826,7 +880,7 @@ a.primary {
         }
 
         @include sm-block() {
-            background-color: $background-color-primary;
+            background-color: $background-color-secondary;
             .btn {
                 opacity: 1;
                 transform: scale(1);
@@ -842,6 +896,18 @@ a.primary {
             }
             .text {
                 padding-bottom: 4rem;
+            }
+        }
+    }
+}
+.gray {
+    .features {
+        .feature {
+            &:hover {
+                background-color: $background-color-primary;
+            }
+            @include sm-block() {
+                background-color: $background-color-primary;
             }
         }
     }
@@ -2000,5 +2066,8 @@ a.primary {
        @include md-block() {
            margin-bottom: -5rem;
        }
+    }
+    .h2 {
+        margin-bottom: 3rem;
     }
 }

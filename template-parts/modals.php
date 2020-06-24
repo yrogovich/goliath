@@ -58,7 +58,7 @@
 	<div class="custom-row">
 		<div class="column-about">
 			<div class="text">
-				<div class="h2">Заказать разработку</div>
+				<div class="h2">Заказать услугу</div>
 				<p>Заполните поля формы, мы свяжемся с Вами в ближайшее время.</p>
 			</div>
 			<!-- /.text -->

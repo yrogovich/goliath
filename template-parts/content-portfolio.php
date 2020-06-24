@@ -1,4 +1,4 @@
-<div class="inner-section" id="single">
+
     <div class="single-container">
         <div class="heading">
             <div class="title">
@@ -121,5 +121,3 @@
 
     </div>
     <!-- /.single-container -->
-</div>
-<!-- /.inner-page-section -->

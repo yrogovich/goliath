@@ -57,7 +57,7 @@ get_header();
 
             <div class="services">
                 <div class="service">
-                    <a href="<?=get_home_url(null, 'cost') ?>">
+                    <a href="<?=get_home_url(null, 'website-development-price') ?>">
                         <div class="icon">
                             <svg viewBox="0 0 282 299" xmlns="http://www.w3.org/2000/svg">
                                 <g class="outline-border" >
@@ -263,34 +263,7 @@ get_header();
             </div>
             <!-- /.technologies -->
 
-            <div class="h2">Наши проекты</div>
-
-            <div class="projects row">
-                <?php 
-                // задаем нужные нам критерии выборки данных из БД
-                $args = array(
-                    'post_status' => 'publish',
-                    'posts_per_page' => 6,
-                    'post_type' => 'portfolio',
-                );
-                $query = new WP_Query( $args );
-
-                // Цикл
-                if ( $query->have_posts() ) {
-                    while ( $query->have_posts() ) {
-                        $query->the_post();
-
-                        get_template_part( 'template-parts/card', get_post_type() );
-                    }
-                }
-                // Возвращаем оригинальные данные поста. Сбрасываем $post.
-                wp_reset_postdata();
-                ?>
-            </div>
-            <!-- /.projects -->
-            <div class="text-center">
-                <a href="<?=get_home_url(null, 'portfolio')?>" class="btn btn-primary">Показать еще</a>
-            </div>
+            <?php get_template_part('template-parts/section-projects'); ?>
         </div>
         <!-- /.container -->
     </div>

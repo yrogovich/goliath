@@ -66,8 +66,8 @@
                     <div class="h3">Услуги</div>
 
                     <ul class="menu">
-                        <li>Разработка сайтов</li>
-                        <li>СЕО продвижение сайтов</li>
+                        <li><a href="<?=get_home_url(null, 'website-development-in-london') ?>">Разработка сайтов</a></li>
+                        <li><a href="<?=get_home_url(null, 'seo-optimization') ?>">СЕО продвижение сайтов</a></li>
                         <li><a href="https://gwshosting.com/billing/cart.php?gid=5" target="_blank" rel="noopener noreferrer">Поддержка сайтов 24/7</a></li>
                         <li><a href="https://gwshosting.com/billing/cart.php?gid=6" target="_blank" rel="noopener noreferrer">Очистка от вирусов</a></li>
                     </ul>
