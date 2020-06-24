@@ -13,14 +13,14 @@ get_header();
 <?php get_template_part( 'template-parts/section-breadcrumbs'); ?>
 
 <main id="primary" class="site-main archive-main">
-    <div class="header">
+    <div class="heading">
         <div class="container">
             <h1>Ознакомьтесь с нашим портфолио</h1>
 
             <?php get_template_part( 'template-parts/terms-type' ); ?>
         </div>
     </div>
-    <!-- /.header -->
+    <!-- /.heading -->
 
     <div class="single-container">
         
